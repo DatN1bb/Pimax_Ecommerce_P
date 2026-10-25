@@ -12,7 +12,7 @@ export interface Product {
     };
 }
 
-export interface CartItem {
+export interface CartItem extends Product {
     product: Product;
     quantity: number;
 }
