@@ -5,6 +5,8 @@ import { Navbar } from './components/navbar';
 import { ProductCard } from './components/ProductCard';
 import { ProductModal } from './components/ProductModal';
 import { useCartStore } from './context/useCartStore';
+import { CartDrawer } from './components/CartDrawer';
+import { CheckoutModal } from './components/CheckoutModal';
 
 function App() {
   {/* Filter and Search */}
@@ -12,6 +14,8 @@ function App() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [sortBy, setSortBy] = useState<string>('popular');
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
   {/* Cart actions */}
   const addToCart = useCartStore((state) => state.addToCart);
@@ -44,10 +48,25 @@ function App() {
       {/* Header */}
       <Navbar
       cartCount={0}
-      onOpenCart={() => console.log('Opened cart')}
+      onOpenCart={() => setIsCartOpen(true)} 
       selectedCategory={selectedCategory}
       onSelectCategory={setSelectedCategory}
       />
+
+      {/* Cart Drawer */}
+      <CartDrawer
+      isOpen={isCartOpen}
+      onClose={() => setIsCartOpen(false)}
+      onProceedToCheckout={() => {
+        setIsCartOpen(false);
+        setIsCheckoutOpen(true);
+      }} />
+
+      {/* Checkout Modal */}
+      <CheckoutModal
+      isOpen={isCheckoutOpen}
+      onClose={() => setIsCheckoutOpen(false)} />
+
 
       {/* Product Catalog */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -89,7 +108,7 @@ function App() {
             No products found matching your search.
           </div>
         ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {PRODUCTS.map((product) => (
             <ProductCard
               key={product.id}
