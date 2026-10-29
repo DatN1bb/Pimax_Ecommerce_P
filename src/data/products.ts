@@ -6,7 +6,7 @@ export const PRODUCTS: Product[] = [
         name: "Vr Headset",
         price: 349.99,
         category: "Electronics",
-        image: "https://www.knoxlabs.com/cdn/shop/files/PimaxDreamAirSE_1200x1200.webp?v=1770237550",
+        image: "https://simracer.at/cdn/shop/files/PimaxDreamAirLighthouseSimracer_1.jpg?v=1783514764",
         description: "Are you ready to take your gaming, fitness, and entertainment experiences to the next level? Look no further than the Pimax DreamAir SE VR headset. With its cutting-edge technology and immersive features, this headset is designed to transport you into a world of virtual reality like never before.",
         rating: { rate: 4.1, count: 153 }
     },
@@ -30,11 +30,20 @@ export const PRODUCTS: Product[] = [
     },
     {
         id: 4,
-        name: "Gaming Mikrofon",
+        name: "Razer Seiren V3",
         price: 122.15,
         category: "Electronics",
-        image: "https://www.bigbang.si/upload/catalog/product/2922501/thumb/866351c2630149e23985a2d762f7e38ed4b56aae_6a95313b9f878_640x640r.webp",
+        image: "https://www.bigbang.si/upload/catalog/product/2922501/866351c2630149e23985a2d762f7e38ed4b56aae_6a95313b9f878_640x640r.webp",
         description: "The Razer Seiren V3 Chroma 32-bit DSP is a USB condenser microphone for streaming, gaming, podcasting, and recording.",
         rating: { rate: 2.2, count: 193 }
+    },
+    {
+        id: 5,
+        name: "Lord of the Rings: The Fellowship Of The Ring",
+        price: 11.15,
+        category: "Books",
+        image: "https://m.media-amazon.com/images/I/71Ep7UNeTtL._AC_UF1000,1000_QL80_.jpg",
+        description: "One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them.",
+        rating: { rate: 4.8, count: 781 }
     }
 ];

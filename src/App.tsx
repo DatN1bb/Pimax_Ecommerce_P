@@ -4,9 +4,9 @@ import type { Product } from './types';
 import { Navbar } from './components/navbar';
 import { ProductCard } from './components/ProductCard';
 import { ProductModal } from './components/ProductModal';
-import { useCartStore } from './context/useCartStore';
 import { CartDrawer } from './components/CartDrawer';
 import { CheckoutModal } from './components/CheckoutModal';
+import { useCartStore } from './context/useCartStore';
 
 function App() {
   {/* Filter and Search */}
@@ -17,15 +17,14 @@ function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
-  {/* Cart actions */}
-  const addToCart = useCartStore((state) => state.addToCart);
-  const totalItems = useCartStore((state) => state.getTotalItems());
+  const cartItems = useCartStore((state) => state.items);
+
+  const totalCartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   {/* Sort logic */}
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter((product) => {
-      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (product.description?.toLowerCase().includes(searchTerm.toLowerCase()) ?? false);
+      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) 
 
       const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
 
@@ -47,7 +46,7 @@ function App() {
     <div className="min-h-screen bg-gray-50 text-gray-900">
       {/* Header */}
       <Navbar
-      cartCount={0}
+      cartCount={totalCartCount}
       onOpenCart={() => setIsCartOpen(true)} 
       selectedCategory={selectedCategory}
       onSelectCategory={setSelectedCategory}
@@ -87,7 +86,7 @@ function App() {
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
             className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-sm" >
-              <option value="popular font-sans"> Popular</option>
+              <option value="popular"> Popular</option>
               <option value="low-high">Price: Low to High</option>
               <option value="high-low">Price: High to Low</option>
             </select>
@@ -109,7 +108,7 @@ function App() {
           </div>
         ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          {PRODUCTS.map((product) => (
+          {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}
               product={product}

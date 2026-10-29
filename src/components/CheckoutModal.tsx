@@ -80,7 +80,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                 ) : (
                     /* Checkout Form */
                     <div>
-                        <h2 className="text-2xl font-bold mb-4">Checkout</h2>
+                        <h2 className="text-2xl text-black font-bold mb-4">Checkout</h2>
                         
                         {/* Order Summary */}
                         <div className="bg-gray-50 p-4 rounded-lg mb-6 text-sm space-y-1">
