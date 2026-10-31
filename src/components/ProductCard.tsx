@@ -19,7 +19,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelectProdu
         <div onClick={() => onSelectProduct(product)}
         className="group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden cursor-pointer flex flex-col">
 
-            <div className="relative h-48 w-full overflow-hidden bg-gray-50 p-4">
+            <div className="relative h-48 w-full overflow-hidden bg-black-600 p-4">
                 <img src={product.image} 
                 alt={product.name} 
                 className="object-scale-down max-w-full max-h-full group-hover:scale-105 transition-transform duration-500"
@@ -31,7 +31,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelectProdu
 
             <div className="p-5 flex flex-col flex-grow justify-between">
                 <div>
-                    <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-1">{product.name}</h3>
+                    <h3 className="font-semibold !text-slate-500 group-hover:text-blue-600 transition-colors line-clamp-1">{product.name}</h3>
                     <p className="text-sm text-gray-500 mt-1 line-clamp-2">{product.description}</p>
                 </div>
 

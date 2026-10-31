@@ -43,10 +43,10 @@ export const ProductModal: React.FC<ProductModalProps> = ({
 
                 <div className="p-6 md:p-8 flex flex-col justify-between">
                     <div>
-                        <h2 className="text-2xl font-bold text-gray-900 leading-tight">{product.name}</h2>
+                        <h2 className="text-2xl font-bold !text-slate-900 leading-tight">{product.name}</h2>
 
                         <div className="flex items-center gap-2 mt-2">
-                            <div className="flex itmems-center text-amber-500 text-sm font-semibold">
+                            <div className="flex items-center text-amber-500 text-sm font-semibold">
                                 ★ <span className="ml-1 text-gray-800">{product.rating.rate}</span>                           
                             </div>
                             <span className="text-gray-400 text-sm">•</span>
