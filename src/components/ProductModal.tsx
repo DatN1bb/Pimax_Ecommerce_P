@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import type { Product} from "../types";
 
 interface ProductModalProps {
@@ -10,9 +10,7 @@ interface ProductModalProps {
 export const ProductModal: React.FC<ProductModalProps> = ({
     product,
     onClose,
-    onAddToCart,
 }) => {
-    const [quantity, setQuantity] = useState(1);
 
     if (!product) return null;
 
