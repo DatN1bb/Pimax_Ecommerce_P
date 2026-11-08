@@ -23,10 +23,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelectProdu
                 <img src={product.image} 
                 alt={product.name} 
                 className="object-scale-down max-w-full max-h-full group-hover:scale-105 transition-transform duration-500"
-                loading="lazy" />
-                <span className="absolute inset-0 w-full h-full object-contain top-3 left-3  text-xs font-semibold px-2.5 py-1 text-gray-700 shadow-sm">
-                    {product.category}
-                </span>
+                loading="lazy" />             
             </div>
 
             <div className="p-5 flex flex-col flex-grow justify-between">
