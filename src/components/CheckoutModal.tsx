@@ -69,7 +69,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                     /* Confirmation Screen */
                     <div className="text-center py-8 space-y-4">
                         <div className="text-5xl">🎉 yippie 🎉</div>
-                        <h2 className="text-2xl font-bold text-green-600">Order Placed Successfully</h2>
+                        <h2 className="text-2xl font-bold !text-slate-500">Order Placed Successfully</h2>
                         <p className="text-gray-600">Thank you for your purchase, {formData.name}. We've sent a confirmation email to <span className="font-semibold">{formData.email}</span></p>
                         <button
                         onClick={handleClose}
@@ -80,7 +80,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                 ) : (
                     /* Checkout Form */
                     <div>
-                        <h2 className="text-2xl text-black font-bold mb-4">Checkout</h2>
+                        <h2 className="text-2xl !text-slate-500 font-bold mb-4">Checkout</h2>
                         
                         {/* Order Summary */}
                         <div className="bg-gray-50 p-4 rounded-lg mb-6 text-sm space-y-1">

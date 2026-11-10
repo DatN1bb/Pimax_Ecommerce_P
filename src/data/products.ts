@@ -70,7 +70,7 @@ export const PRODUCTS: Product[] = [
         price: 10.07,
         category: "Books",
         image: "https://static-ppimages.freetls.fastly.net/nielsens/9780099549482.jpg?canvas=600,600&fit=bounds&height=600&mode=max&width=600&404=default.jpg",
-        description: "The Razer Seiren V3 Chroma 32-bit DSP is a USB condenser microphone for streaming, gaming, podcasting, and recording.",
+        description: "To Kill a Mockingbird is a novel by Harper Lee published in 1960. Instantly successful, widely read in high schools and middle schools in the United States, it has become a classic of modern American literature, winning the Pulitzer Prize.",
         rating: { rate: 4.5, count: 693 }
     },
     {
